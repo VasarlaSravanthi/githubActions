@@ -1,4 +1,3 @@
-Run cat "$GITHUB_EVENT_PATH"
 {
   "action": "opened",
   "number": 4,
