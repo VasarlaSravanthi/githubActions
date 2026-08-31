@@ -8,7 +8,7 @@ jobs:
   my-job: #stage
     runs-on: ubuntu-latest # agent This is github hosted runner
     steps:
-      - name: event triggered data #step
+      - name: event triggered data 
         run: run: |
           cat "$GITHUB_EVENT_PATH"
           echo "The action was: $(jq -r '.action' "$GITHUB_EVENT_PATH")"
