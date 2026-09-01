@@ -1,4 +1,4 @@
-name: context
+name: Series-context
 # triggers
 on: 
   push:
