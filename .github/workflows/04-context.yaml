@@ -40,4 +40,4 @@ jobs:
     steps:
       - name: access another step output
         run: |
-          echo "Image version: ${{ needs.first-job.outputs.versions }}"
+          echo "Image-version: ${{ needs.first-job.outputs.versions }}"
