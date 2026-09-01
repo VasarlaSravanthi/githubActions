@@ -10,7 +10,7 @@ env:
 jobs: # stages
   first-job: # stage
     outputs:
-      version: "${{ steps.version.outputs.image-version }}"
+      version: "${{ steps.ver.outputs.iversion }}"
     runs-on: ubuntu-latest # agent, ubuntu-latest is github hosted runner
     steps:
       - name: print env variables
@@ -33,9 +33,9 @@ jobs: # stages
           echo "Course: $course"
 
       - name: application version
-        id: version
+        id: ver
         run: |
-          echo "image-version=1.0.0" >> $GITHUB_OUTPUT
+          echo "iversion=1.0.0" >> $GITHUB_OUTPUT
 
       - name: Dump job context
         env:
