@@ -2,8 +2,7 @@ name: call another workflow
 on: 
  push:
   branch: 
-      - main
-
+      - 'main'
 jobs:
   feature-pipeline:
     uses: VasarlaSravanthi/workflows/.github/workflows/nodejs-eks-feature.yaml@main
