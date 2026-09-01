@@ -1,0 +1,20 @@
+name: context
+# triggers
+on: 
+  push
+env:
+  project: "roboshop"
+  component: "catalogue"
+  enivornment: "dev
+  
+jobs:
+  my-job: #stage
+    runs-on: ubuntu-latest # agent This is github hosted runner
+    steps:
+      - name: my-step-1 #step
+        run: echo "Hello World!"
+
+      - name: my-step -2 #step
+        run: |
+        echo "Project : $project"
+        echo "component : $component"
