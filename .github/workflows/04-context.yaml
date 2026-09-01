@@ -15,3 +15,7 @@ jobs:
         run: |
           echo "Project : $project"
           echo "component : $component"
+      - name: print github context
+        env:
+          GITHUB_CONTEXT: ${{ toJSON(github) }}
+        run: echo "$GITHUB_CONTEXT"
