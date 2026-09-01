@@ -1,0 +1,20 @@
+name: condition
+# triggers
+on: 
+  push
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }} #condition for main branch
+  cancel-in-progress: false # multiple triggers cannot be made ie., upcoming triggers will wait
+jobs:
+  my-job: #stage
+    runs-on: ubuntu-latest # agent This is github hosted runner
+    steps:
+      - name: Runs if code is in main branch 
+        if: github.ref_name == 'main'
+        run: echo "This is execute in main branch"
+
+      - name: else Feature brance #step
+        if: github.ref_name != 'main'
+        run: |
+          sleep 10
+          echo "Executed in feature branch"
