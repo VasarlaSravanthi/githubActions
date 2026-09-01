@@ -33,7 +33,7 @@ jobs:
       - name: application version
         id: ver
         run: |
-         echo "iversion=1.0.0" >> GITHUB_OUTPUT
+         echo "iversion=1.0.0" >> $GITHUB_OUTPUT
          
   second-job:
     runs-on: ubuntu-latest
