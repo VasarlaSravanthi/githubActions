@@ -11,10 +11,12 @@ jobs:
     steps:
       - name: Runs if code is in main branch 
         if: github.ref_name == 'main'
-        run: echo "This is execute in main branch"
+        run: |
+          sleep 10
+          echo "This is execute in main branch"
 
       - name: else Feature brance #step
         if: github.ref_name != 'main'
         run: |
-          sleep 10
+          sleep 30
           echo "Executed in feature branch"
