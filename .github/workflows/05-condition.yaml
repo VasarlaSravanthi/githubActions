@@ -11,4 +11,5 @@ jobs:
         run: echo "This is execute in main branch"
 
       - name: else Feature brance #step
+        if: github.ref_name != 'main'
         run: echo "Executed in feature branch"
