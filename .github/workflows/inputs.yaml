@@ -1,7 +1,7 @@
-name: Input
+name: inputs demo
 # triggers
 on: 
-workflow_dispatch:
+  workflow_dispatch:
     inputs:
       logLevel:
         description: 'Log level'
@@ -20,15 +20,11 @@ workflow_dispatch:
         description: 'Environment to run tests against'
         type: environment
         required: true
-# stages
-jobs:
-  my-job: #stage
-    runs-on: ubuntu-latest # agent This is github hosted runner
+jobs: # stages
+  my-job: # stage
+    runs-on: ubuntu-latest # agent, ubuntu-latest is github hosted runner
     steps:
-      - name: Print Inputs #step
+      - name: print inputs
         run: |
-        echo "logLevel : ${{ inputs.logLevel }}"
-        echo "${{ inputs.tags}}"
-        
-
-      
+          echo "${{ inputs.logLevel }}"
+          echo "${{ inputs.tags }}"
