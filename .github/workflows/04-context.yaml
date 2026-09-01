@@ -42,5 +42,11 @@ jobs:
       - name: access another step output
         run: |
           echo "Image-version: ${{ needs.job1.outputs.version }}"
+   third-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Parallel job
+        run: |
+          echo "This is parallel job running along with job1"
 
   
