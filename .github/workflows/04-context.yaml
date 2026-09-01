@@ -10,7 +10,7 @@ env:
 jobs:
   first-job: #stage
     outputs:
-      versions: "${{ steps.version-id.outputs.iversion }}"
+      versions: "${{ steps.ver.outputs.iversion }}"
     runs-on: ubuntu-latest # agent This is github hosted runner
     steps:
       - name: print env variables #step
@@ -31,10 +31,10 @@ jobs:
           echo "course : $course & courseduration : $duration"
 
       - name: application version
-        id: version-id
+        id: ver
         run: |
          echo "iversion=1.0.0" >> GITHUB_OUTPUT
-         echo "versions: $versions"
+         
   second-job:
     runs-on: ubuntu-latest
     needs: first-job
