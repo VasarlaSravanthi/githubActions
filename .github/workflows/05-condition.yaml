@@ -1,0 +1,14 @@
+name: condition
+# triggers
+on: push
+# stages
+jobs:
+  my-job: #stage
+    runs-on: ubuntu-latest # agent This is github hosted runner
+    steps:
+      - name: Runs if code is in main branch 
+        if: github.ref_name == 'main'
+        run: echo "This is execute in main branch"
+
+      - name: else Feature brance #step
+        run: echo "Executed in feature branch"
