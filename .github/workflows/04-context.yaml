@@ -22,8 +22,8 @@ jobs:
       
       - name: add variables
         run: |
-          echo "course : Githib-Actions" >> $GITHUB_ENV
-          echo "duration : 5hrs" >> $GITHUB_ENV
+          echo "course=Githib-Actions" >> $GITHUB_ENV
+          echo "duration=5hrs" >> $GITHUB_ENV
       - name: Access in another step variables
         run: |
           echo "course : $course & courseduration : $duration"
