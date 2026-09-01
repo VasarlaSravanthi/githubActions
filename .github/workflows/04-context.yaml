@@ -5,7 +5,7 @@ on:
 env:
   project: "roboshop"
   component: "catalogue"
-  enivornment: "dev
+  enivornment: dev
   
 jobs:
   my-job: #stage
